@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapverse Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-poppins">
+    <!-- Navbar -->
+    <div class="w-full bg-[#2E56AE] py-5 h-[793px]">
+        <nav x-data="{ open: false }" class="container mx-auto flex items-center justify-between px-6 py-4">
+            <!-- Logo -->
+            <div>
+                <img src="resources/images/logoSnapversee.png" alt="Snapverse Logo" class="w-40 h-auto">
+            </div>
+        
+            <!-- Burger Button (Mobile) -->
+            <button @click="open = !open" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        
+            <!-- Nav Links (Desktop) -->
+            <ul class="hidden md:flex space-x-8 text-white font-semibold text-lg">
+                <li><a href="#" class="hover:text-gray-200">Tentang Kita</a></li>
+                <li><a href="#" class="hover:text-gray-200">Portofolio</a></li>
+                <li><a href="#" class="hover:text-gray-200">Layanan</a></li>
+                <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
+            </ul>
+        
+            <!-- Button (Desktop) -->
+            <button class="hidden md:block bg-[#3A5BBA] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#2a4a9e] transition-colors">
+                Jelajahi Sekarang
+            </button>
+        
+            <!-- Mobile Menu -->
+            <div x-show="open" class="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden" @click.away="open = false">
+                <div class="absolute top-0 left-0 w-3/4 h-full bg-gray-900 text-white p-6 transition-all transform" :class="open ? 'translate-x-0' : '-translate-x-full'">
+                    <button @click="open = false" class="absolute top-4 right-4 text-white text-2xl">
+                        ✕
+                    </button>
+                    <ul class="space-y-6 mt-10 text-lg">
+                        <li><a href="#" class="block hover:text-gray-400">Tentang Kita</a></li>
+                        <li><a href="#" class="block hover:text-gray-400">Portofolio</a></li>
+                        <li><a href="#" class="block hover:text-gray-400">Layanan</a></li>
+                        <li><a href="#" class="block hover:text-gray-400">FAQ</a></li>
+                    </ul>
+                    <button class="mt-6 w-full bg-[#3A5BBA] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#2a4a9e] transition-colors">
+                        Jelajahi Sekarang
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        <div class="container mx-auto mt-20 text-center">
+            <h1 class="text-5xl font-semibold text-white mb-4">
+                Jualan Gak Cuma Foto Doang  <br>
+                Yuk Pakai Animasi <br>
+            </h1>
+            <p class="text-[16px] text-white mb-4">
+              Bikin animasi, buat bisnismu makin stand out!
+            </p>
+            <button class="bg-[#3A5BBA] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2a4a9e] transition-colors text-2xl">
+                Lihat Portofolio
+            </button>
+
+            <!-- imagesIlustrator -->
+            <div data-aos="fade-up" class="">
+                <img src="resources/images/Gambar porto.png" alt="gambar-ilustrator">
+            </div>
+
+        </div>
+
+        <!-- tentang kami  -->
+       <section id="tentang-kami" class="py-50 mt-[84px]" data-aos="fade-up">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flex-col m-5">
+                <h1 class="font-semibold text-4xl md:mt-4 mt-5">Tentang Kami</h1>
+                <p class="mt-4 max-w-lg leading-relaxed">
+                    Snapversee adalah studio animasi yang siap membantu UMKM dan brand tampil lebih menonjol dengan visual yang bergerak.
+                    Kami percaya bahwa setiap frame bisa bercerita, dan dengan animasi, pesan bisnismu bisa lebih engaging, mudah dipahami, 
+                    dan tak terlupakan! Dari 2D Animation, Motion Graphics, hingga Custom Asset Design, kami menghadirkan solusi kreatif untuk 
+                    konten yang lebih menarik dan berdampak.
+                </p>
+            </div>
+            
+            <div class="mt-8 md:mt-0 md:ml-auto">
+                <img src="resources/images/tentang-kami.png" alt="tentang-kami" class="w-[367px] h-[409px]">
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tim Kami -->
+        <!-- <section id="timKami" class="py-50 mt-[158px]">
+            <div class="container mx-auto" >
+                <div class="text-center" data-aos="fade-up">
+                    <h1 class="font-semibold text-5xl" >Tim Kami</h1>
+                    <p>ini adalah tim kami yang akan melayani bisnis anda </p>
+                </div>
+                 <div class="flex flex-row mt-20">
+
+                     <div class="text-center " data-aos="fade-up"  data-aos-duration="350">
+                         <div class="w-[235px] h-[281px] bg-[#D9D9D9] mx-auto">
+                         </div>
+                         <p>CEO</p>
+                         <h1 class="font-bold text-4xl" >Dandi</h1>
+                     </div>
+
+
+                     <div class="text-center ml-10" data-aos="fade-up"  data-aos-duration="450">
+                         <div class="w-[235px] h-[281px] bg-[#D9D9D9] mx-auto">
+                         </div>
+                         <p>Product Specialist</p>
+                         <h1 class="font-bold text-4xl" >Marsha</h1>
+                     </div>
+
+
+                     <div class="text-center ml-10" data-aos="fade-up"  data-aos-duration="500">
+                         <div class="w-[235px] h-[281px] bg-[#D9D9D9] mx-auto">
+                         </div>
+                         <p>Social Media Specialist</p>
+                         <h1 class="font-bold text-4xl" >Jendra</h1>
+                     </div>
+
+
+                     <div class="text-center ml-10" data-aos="fade-up"  data-aos-duration="750">
+                         <div class="w-[235px] h-[281px] bg-[#D9D9D9] mx-auto">
+                         </div>
+                         <p>Web & customer relation</p>
+                         <h1 class="font-bold text-4xl" >Iklil</h1>
+                     </div>
+
+                     <div class="text-center ml-10" data-aos="fade-up"  data-aos-duration="800">
+                         <div class="w-[235px] h-[281px] bg-[#D9D9D9] mx-auto">
+                         </div>
+                         <p>Finace</p>
+                         <h1 class="font-bold text-4xl" >Rangga</h1>
+                     </div>
+
+
+                     <div class="text-center ml-10" data-aos="fade-up"  data-aos-duration="1000">
+                         <div class="w-[235px] h-[281px] bg-[#D9D9D9] mx-auto">
+                         </div>
+                         <p>Marketing</p>
+                         <h1 class="font-bold text-4xl" >Mora</h1>
+                     </div>
+
+
+                 </div>
+            </div>
+        </section> -->
+
+
+        <!-- portofolio kami -->
+        <div id="portofolioKami" class="mt-[234px] bg-gradient-to-r from-[#2348B2] to-[#2348B2] h-auto">
+            <div class="container mx-auto mt-[100px]">
+                <div class="text-center"> 
+                    <h1 class="font-semibold text-4xl text-white">Portofolio Kami</h1>
+                    <p class="text-white mb-20">Ini adalah tim kami yang akan melayani bisnis Anda.</p>
+                </div>
+                <!-- box -->
+                <div class="flex justify-center"> <!-- Parent untuk mengatur ke tengah horizontal -->
+                    <div class="flex flex-col items-center gap-8"> <!-- Mengatur ke tengah vertikal dan memberikan jarak antar baris -->
+                        <!-- Baris Pertama -->
+                        <div class="flex md:flex-row gap-6 flex-col" > <!-- Mengatur jarak antar item dalam baris -->
+                            <div class="bg-[#F4F4F4] h-auto w-[305px] rounded-xl" data-aos="fade-right">
+                                <div class="bg-white h-[177px] w-[282px] m-3 mt-2 rounded-xl"></div>
+                                <div class="m-2">
+                                    <h1 class="font-semibold text-xl">Mogarph -2d animasi</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis consequatur incidunt assumenda sit cupiditate recusandae quaerat nesciunt in sunt, perferendi</p>
+                                </div>
+                            </div>
+                            <div class="bg-[#F4F4F4] h-auto w-[305px] rounded-xl" data-aos="fade-right">
+                                <div class="bg-white h-[177px] w-[282px] m-3 mt-2 rounded-xl"></div>
+                                <div class="m-2">
+                                    <h1 class="font-semibold text-xl">Mogarph -2d animasi</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis consequatur incidunt assumenda sit cupiditate recusandae quaerat nesciunt in sunt, perferendi</p>
+                                </div>
+                            </div>
+                            <div class="bg-[#F4F4F4] h-auto w-[305px] rounded-xl" data-aos="fade-right">
+                                <div class="bg-white h-[177px] w-[282px] m-3 mt-2 rounded-xl"></div>
+                                <div class="m-2">
+                                    <h1 class="font-semibold text-xl">Mogarph -2d animasi</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis consequatur incidunt assumenda sit cupiditate recusandae quaerat nesciunt in sunt, perferendi</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="flex md:flex-row gap-6 flex-col" > <!-- Mengatur jarak antar item dalam baris -->
+                            <div class="bg-[#F4F4F4] h-auto w-[305px] rounded-xl" data-aos="fade-right">
+                                <div class="bg-white h-[177px] w-[282px] m-3 mt-2 rounded-xl"></div>
+                                <div class="m-2">
+                                    <h1 class="font-semibold text-xl">Mogarph -2d animasi</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis consequatur incidunt assumenda sit cupiditate recusandae quaerat nesciunt in sunt, perferendi</p>
+                                </div>
+                            </div>
+                            <div class="bg-[#F4F4F4] h-auto w-[305px] rounded-xl" data-aos="fade-right">
+                                <div class="bg-white h-[177px] w-[282px] m-3 mt-2 rounded-xl"></div>
+                                <div class="m-2">
+                                    <h1 class="font-semibold text-xl">Mogarph -2d animasi</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis consequatur incidunt assumenda sit cupiditate recusandae quaerat nesciunt in sunt, perferendi</p>
+                                </div>
+                            </div>
+                            <div class="bg-[#F4F4F4] h-auto w-[305px] rounded-xl" data-aos="fade-right">
+                                <div class="bg-white h-[177px] w-[282px] m-3 mt-2 rounded-xl"></div>
+                                <div class="m-2">
+                                    <h1 class="font-semibold text-xl">Mogarph -2d animasi</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis consequatur incidunt assumenda sit cupiditate recusandae quaerat nesciunt in sunt, perferendi</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                     
+                        
+                    </div>
+                </div>
+                <!-- pricelist -->
+                <section id="priceList" class="mt-[200px]">
+                    <div class="container mx-auto">
+                        <h1 class="text-white font-semibold text-4xl text-center" data-aos="fade-up">Pilih Bundling Paket</h1>
+                        <div>
+                            <div class="flex md:flex-row flex-col  justify-center mt-20">
+
+
+                                <div class="bg-white h-auto md:w-[442px] w-auto rounded-xl mt-10 p-1" data-aos="fade-up"  data-aos-duration="350">
+                                    <div class="w-auto h-[287px] bg-[#D9D9D9] rounded-xl m-5 mt-[10px]">
+    
+                                    </div>
+                                    <div class="m-3">
+                                        <h1 class="text-4xl font-bold" >Paket Bundling Basic</h1>
+                                        <p class="font-semibold text-xl" >Harga: Rp 50.000,00</p>
+                                        <p class="mt-2 text-xl">
+                                            Pilih paket bundling Basic <br>
+                                            untuk mendapatkan 1 video <br>
+                                            animasi produk sederhana <br>
+                                            dan motion graphic untuk <br>
+                                            memperkenalkan bisnismu. <br>
+                                            Cocok untuk UMKM yang ingin <br>
+                                            menarik perhatian dengan <br>
+                                            animasi simpel namun efektif!
+                                        </p>
+                                        <div class="mt-4" >
+                                            <button class="bg-[#3A5BBA] rounded-xl text-white  p-5 font-semibold text-xl" >Pilih Paket Bundling Basic</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="bg-white h-auto md:w-[442px] w-auto rounded-xl mt-10 p-1 md:mx-10" data-aos="fade-up"  data-aos-duration="750">
+                                    <div class="w-auto h-[287px] bg-[#D9D9D9] rounded-xl m-5 mt-[10px]">
+    
+                                    </div>
+                                    <div class="m-3">
+                                        <h1 class="text-4xl font-bold" >Paket Bundling Menengah</h1>
+                                        <p class="font-semibold text-xl" >Harga: Rp 75.000,00</p>
+                                        <p class="mt-2 text-xl">
+                                            Dengan paket bundling <br>
+                                            Menengah, kamu akan <br>
+                                            mendapatkan animasi produk, <br> motion graphics, dan desain <br>
+                                            aset custom untuk konten <br>
+                                            media sosial atau iklan. <br> 
+                                            Semua dalam satu paket <br>
+                                            untuk memberikan nilai lebih <br>
+                                            untuk bisnismu dengan harga <br>
+                                            lebih terjangkau!
+                                        </p>
+                                        <div class="mt-4" >
+                                            <button class="bg-[#3A5BBA] rounded-xl text-white  p-5 font-semibold text-xl" >Pilih Paket Bundling Menengah</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="bg-white h-auto md:w-[442px] w-auto  rounded-xl mt-10 p-1" data-aos="fade-up"  data-aos-duration="1000">
+                                    <div class="w-auto h-[287px] bg-[#D9D9D9] rounded-xl m-5 mt-[10px]">
+    
+                                    </div>
+                                    <div class="m-3">
+                                        <h1 class="text-4xl font-bold" >Paket Bundling Premium</h1>
+                                        <p class="font-semibold text-xl" >Harga: Rp 100.000,00</p>
+                                        <p class="mt-2 text-xl">
+                                            Paket bundling Premium <br>
+                                            menawarkan animasi kustom <br>
+                                            lengkap, motion graphics <br>
+                                            interaktif, dan video explainer <br>
+                                            untuk brand atau perusahaan <br> 
+                                            yang ingin menonjol di pasar. <br>
+                                            Semua layanan premium ini <br>
+                                            hadir untuk membantu  <br>
+                                            memperkuat citra brand kamu <br>
+                                            dengan cara yang lebih efektif <br>
+                                            dan profesional.
+                                        </p>
+                                        <div class="mt-4" >
+                                            <button class="bg-[#3A5BBA] rounded-xl text-white  p-5 font-semibold text-xl" >Pilih Paket Bundling Basic</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQs -->
+                <section id="FAQs" class="md:mt-[350px] mt-10  mb-30">
+                    <div class="container mx-auto">
+                        <div class="text-center" data-aos="fade-up">
+                            <p class="text-white" >FAQs</p>
+                            <h1 class="text-white font-semibold text-4xl" >Frequently asked questions</h1>
+                        </div>
+                          
+                        <div class="mt-10">
+                            <!-- Accordion Item 1 -->
+                            <div class="border-b border-slate-200 bg-white mb-4 rounded-xl p-2" data-aos="fade-up">
+                                <button onclick="toggleAccordion(1)" class="w-full flex justify-between items-center py-5 text-slate-800">
+                                    <span>What is Material Tailwind?</span>
+                                    <span id="icon-1" class="text-slate-800 transition-transform duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                            <path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                    <div class="pb-5 text-sm text-slate-500">
+                                        Material Tailwind is a framework that enhances Tailwind CSS with additional styles and components.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Accordion Item 2 -->
+                            <div class="border-b border-slate-200 bg-white mb-4 rounded-xl p-2" data-aos="fade-up">
+                                <button onclick="toggleAccordion(2)" class="w-full flex justify-between items-center py-5 text-slate-800">
+                                    <span>How to use Material Tailwind?</span>
+                                    <span id="icon-2" class="text-slate-800 transition-transform duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                            <path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                    <div class="pb-5 text-sm text-slate-500">
+                                        You can use Material Tailwind by importing its components into your Tailwind CSS project.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Accordion Item 3 -->
+                            <div class="border-b border-slate-200 bg-white mb-4 rounded-xl p-2 mb-5" data-aos="fade-up">
+                                <button onclick="toggleAccordion(3)" class="w-full flex justify-between items-center py-5 text-slate-800">
+                                    <span>What can I do with Material Tailwind?</span>
+                                    <span id="icon-3" class="text-slate-800 transition-transform duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                            <path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                    <div class="pb-5 text-sm text-slate-500">
+                                        Material Tailwind allows you to quickly build modern, responsive websites with a focus on design.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <script>
+                                function toggleAccordion(index) {
+                                    const content = document.getElementById(`content-${index}`);
+                                    const icon = document.getElementById(`icon-${index}`);
+                        
+                                    // SVG for Down icon
+                                    const downSVG = `
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    `;
+                        
+                                    // SVG for Up icon
+                                    const upSVG = `
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    `;
+                        
+                                    // Toggle the content's max-height for smooth opening and closing
+                                    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                                        content.style.maxHeight = '0';
+                                        icon.innerHTML = upSVG;
+                                    } else {
+                                        content.style.maxHeight = content.scrollHeight + 'px';
+                                        icon.innerHTML = downSVG;
+                                    }
+                                }
+                            </script>
+                        </div>
+                        
+                    </div>
+                </section>
+
+
+
+            </div>
+            <footer id="footerKu" class="w-full min-h-[400px] bg-gradient-to-r from-[#2144A8] to-[#737681] mt-20">
+                <div class="container mx-auto flex flex-col items-center gap-10 py-10">
+                    <img src="resources/images/logoSnap.png" alt="snapversee" class="md:w-[244px] md:h-[222px] w-[126px] h-[117px]">
+                    <h1 class="text-white font-semibold md:text-4xl text-center text-3xl">
+                        Bawa Bisnismu ke Level Selanjutnya <br>
+                        dengan Animasi Keren! <br>
+                    </h1>
+                </div>
+            </footer>
+            
+        </div>
+
+
+
+
+        
+
+
+    </div>
+
+</body>
+<script>
+    AOS.init();
+</script>
+</html>
